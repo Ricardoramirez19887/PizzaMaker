@@ -1,0 +1,29 @@
+﻿/*
+ * Ricardo Ramirez
+ * CST- 250
+ * 7/7/26
+ * PIzza Maker
+ * Activity 4
+ */
+
+// Citation: Grand Canyon University. (2025). CST-250 Activity 4: Building a Data-Driven Pizza Order.
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace PizzaMaker.Models
+{
+    public class PizzaModel
+    {
+        public string ClietName { get; set; }
+        public List<string> Ingredients { get; set; }
+        public List<string> StrangeAddOns { get; set; }
+        public string CrustType { get; set; }
+        public int SauceQuantity { get; set; }
+        public CheeseQuantity {  get; set; }
+        public DateTime DeliveryTime { get; set; } 
+        public Color PizzaBoxColor { get; set; }
+        public decimal Price { get; set; }
+
+    }
+}
