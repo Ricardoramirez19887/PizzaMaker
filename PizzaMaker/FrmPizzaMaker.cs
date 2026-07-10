@@ -67,22 +67,42 @@ namespace PizzaMaker
 
         private void txtName_Leave(object sender, EventArgs e)
         {
-            pizzaModel.ClietName = txtName.Text;
+            pizzaModel.ClientName = txtName.Text;
             EnablePizzaCreation();
         }
 
         private void ChbIngredientCheckedChangeEH(object sender, EventArgs e)
         {
-
+            UpdatePrice();
         }
 
         private void LsbStrangeAddOnsSelectedIndexChangeEH(object sender, EventArgs e)
         {
             pizzaModel.StrangeAddOns =
-                lsbStrangeAddOns.SelectedItems.Cast<string>().ToAList();
+                lsbStrangeAddons.SelectedItems.Cast<string>().ToList();
 
             UpdatePrice();
-                
+
+        }
+
+        private void RdoCrustCheckedChangeEH(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RdoCrustCheckedChange(object sender, EventArgs e)
+        {
+
+        }
+
+        private void HsbExtraGoodiesValueChangedEH(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DtpDeliveryTimeValueChangeEH(object sender, EventArgs e)
+        {
+            pizzaModel.DeliveryTime = dtpDeliveryTime.Value;
         }
     }
 }

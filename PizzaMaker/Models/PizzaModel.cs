@@ -15,7 +15,7 @@ namespace PizzaMaker.Models
 {
     public class PizzaModel
     {
-        public string ClietName { get; set; }
+        public string ClietName { get; set; } = string.Empty;
         public List<string> Ingredients { get; set; }
         public List<string> StrangeAddOns { get; set; }
         public string CrustType { get; set; }
@@ -24,6 +24,10 @@ namespace PizzaMaker.Models
         public DateTime DeliveryTime { get; set; } 
         public Color PizzaBoxColor { get; set; }
         public decimal Price { get; set; }
+
+        public string ClientName { get; set; } = string.Empty;
+
+        
 
         public PizzaModel()
         {

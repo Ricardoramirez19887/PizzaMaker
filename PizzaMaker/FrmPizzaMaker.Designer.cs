@@ -244,6 +244,7 @@
             rdoGluttenFree.TabStop = true;
             rdoGluttenFree.Text = "Gluten Free";
             rdoGluttenFree.UseVisualStyleBackColor = true;
+            rdoGluttenFree.CheckedChanged += LsbStrangeAddOnsSelectedIndexChangeEH;
             // 
             // rdoStuffedCrust
             // 
@@ -255,6 +256,7 @@
             rdoStuffedCrust.TabStop = true;
             rdoStuffedCrust.Text = "Stuffed Crust";
             rdoStuffedCrust.UseVisualStyleBackColor = true;
+            rdoStuffedCrust.CheckedChanged += LsbStrangeAddOnsSelectedIndexChangeEH;
             // 
             // rdoThinCrust
             // 
@@ -266,6 +268,7 @@
             rdoThinCrust.TabStop = true;
             rdoThinCrust.Text = "ThinCrust";
             rdoThinCrust.UseVisualStyleBackColor = true;
+            rdoThinCrust.CheckedChanged += RdoCrustCheckedChangeEH;
             // 
             // rdoDeepDish
             // 
@@ -277,6 +280,7 @@
             rdoDeepDish.TabStop = true;
             rdoDeepDish.Text = "Deep Dish";
             rdoDeepDish.UseVisualStyleBackColor = true;
+            rdoDeepDish.CheckedChanged += RdoCrustCheckedChange;
             // 
             // grpExtraGoodies
             // 
@@ -341,6 +345,7 @@
             hsbCheese.Name = "hsbCheese";
             hsbCheese.Size = new Size(100, 26);
             hsbCheese.TabIndex = 7;
+            hsbCheese.ValueChanged += LsbStrangeAddOnsSelectedIndexChangeEH;
             // 
             // hsbSauce
             // 
@@ -348,6 +353,7 @@
             hsbSauce.Name = "hsbSauce";
             hsbSauce.Size = new Size(100, 26);
             hsbSauce.TabIndex = 8;
+            hsbSauce.ValueChanged += HsbExtraGoodiesValueChangedEH;
             // 
             // label3
             // 
@@ -365,6 +371,7 @@
             dtpDeliveryTime.Name = "dtpDeliveryTime";
             dtpDeliveryTime.Size = new Size(321, 30);
             dtpDeliveryTime.TabIndex = 8;
+            dtpDeliveryTime.ValueChanged += DtpDeliveryTimeValueChangeEH;
             // 
             // label5
             // 
