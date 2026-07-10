@@ -20,10 +20,24 @@ namespace PizzaMaker.Models
         public List<string> StrangeAddOns { get; set; }
         public string CrustType { get; set; }
         public int SauceQuantity { get; set; }
-        public CheeseQuantity {  get; set; }
+        public int CheeseQuantity { get; set; }
         public DateTime DeliveryTime { get; set; } 
         public Color PizzaBoxColor { get; set; }
         public decimal Price { get; set; }
+
+        public PizzaModel()
+        {
+            ClietName = "";
+            Ingredients = new List<string>();
+            StrangeAddOns = new List<string>();
+            CrustType = "";
+            SauceQuantity = 0;
+            CheeseQuantity = 0;
+            DeliveryTime = DateTime.Now;
+            PizzaBoxColor = Color.White;
+            Price = 15.00m;
+
+        }
 
     }
 }
