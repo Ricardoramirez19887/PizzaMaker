@@ -104,5 +104,18 @@ namespace PizzaMaker
         {
             pizzaModel.DeliveryTime = dtpDeliveryTime.Value;
         }
+
+        private void PicPizzaBoxColorClickEH(object sender, EventArgs e)
+        {
+            using ColorDialog colorDialog = new ColorDialog();
+
+            if (colorDialog.ShowDialog() == DialogResult.OK)
+            {
+                picPizzaBoxColor.BackColor = colorDialog.Color;
+                pizzaModel.PizzaBoxColor = colorDialog.Color;
+
+            }
+        }
     }
 }
+

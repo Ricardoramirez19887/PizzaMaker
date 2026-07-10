@@ -391,6 +391,7 @@
             picPizzaBoxColor.Size = new Size(125, 62);
             picPizzaBoxColor.TabIndex = 10;
             picPizzaBoxColor.TabStop = false;
+            picPizzaBoxColor.Click += PicPizzaBoxColorClickEH;
             // 
             // lblPizzaPrice
             // 
