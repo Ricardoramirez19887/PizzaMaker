@@ -9,6 +9,7 @@
 using System.Drawing.Text;
 using System.Text;
 using PizzaMakerClassLibrary.Models;
+using PizzaMakerClassLibrary.Services.BusinessLogicLayer;
 
 namespace PizzaMaker
 
@@ -16,10 +17,14 @@ namespace PizzaMaker
     public partial class FrmPizzaMaker : Form
     {
         private PizzaModel pizzaModel;
+
+        private PizzaLogic pizzaLogic;
         public FrmPizzaMaker()
         {
             InitializeComponent();
             pizzaModel = new PizzaModel();
+
+            pizzaLogic = new PizzaLogic();
 
             btnCreatePizza.Enabled = false;
             btnResetForm.Enabled = false;
@@ -172,6 +177,7 @@ namespace PizzaMaker
 
             btnCreatePizza.Enabled = false;
             btnResetForm.Enabled = false;
+            btnSeeFullOrder.Enabled = false;
         }
 
 
@@ -200,6 +206,25 @@ namespace PizzaMaker
         }
 
         private void grpCrust_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnCreatePizzaClickEH(object sender, EventArgs e)
+        {
+            bool isValidPizza;
+            int pizzaCount;
+
+            (isValidPizza, pizzaCount) = pizzaLogic.AddPizzaToOrder(pizzaModel);
+
+            if (isValidPizza)
+            {
+                ResetForm();
+                btnSeeFullOrder.Enabled = true;
+            }
+        }
+
+        private void btnSeeFullOrder_Click(object sender, EventArgs e)
         {
 
         }
