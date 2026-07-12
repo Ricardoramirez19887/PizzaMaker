@@ -231,6 +231,15 @@ namespace PizzaMaker
 
             frmOrderDetails.ShowDialog();
         }
+
+        private void btnSeeFullOrder_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void btnSaveOrderClickEH(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

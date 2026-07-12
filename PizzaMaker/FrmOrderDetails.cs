@@ -37,5 +37,19 @@ namespace PizzaMaker
         {
 
         }
+
+        private void BtnSaveOrderClickEH(object sender, EventArgs e)
+        {
+            bool isSaveSuccess = _pizzaLogic.WriteOrderToFile();
+
+            if (isSaveSuccess)
+            {
+                MessageBox.Show("The pizza order was saved successfully.");
+            }
+            else
+            {
+                MessageBox.Show("The pizza order could not be saved.");
+            }
+        }
     }
 }

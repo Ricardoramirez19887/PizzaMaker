@@ -33,6 +33,11 @@ namespace PizzaMakerClassLibrary.Services.BusinessLogicLayer
         {
             return PizzaDAO.GetPizzaOrder();
         }
+
+        public bool WriteOrderToFile()
+        {
+            return PizzaDAO.WriteOrderToFile();
+        }
     }
 }
 
