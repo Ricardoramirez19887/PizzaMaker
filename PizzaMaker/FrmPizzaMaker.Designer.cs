@@ -233,6 +233,7 @@
             grpCrust.TabIndex = 5;
             grpCrust.TabStop = false;
             grpCrust.Text = "Crust";
+            grpCrust.Enter += grpCrust_Enter;
             // 
             // rdoGluttenFree
             // 
@@ -297,6 +298,7 @@
             grpExtraGoodies.TabIndex = 6;
             grpExtraGoodies.TabStop = false;
             grpExtraGoodies.Text = "Extra Goodies";
+            grpExtraGoodies.Enter += grpExtraGoodies_Enter;
             // 
             // label6
             // 
@@ -364,6 +366,7 @@
             label3.Size = new Size(152, 24);
             label3.TabIndex = 7;
             label3.Text = "Delivery Time";
+            label3.Click += label3_Click;
             // 
             // dtpDeliveryTime
             // 
@@ -382,6 +385,7 @@
             label5.Size = new Size(172, 24);
             label5.TabIndex = 9;
             label5.Text = "Pizza Box Color";
+            label5.Click += label5_Click;
             // 
             // picPizzaBoxColor
             // 
@@ -421,6 +425,7 @@
             btnResetForm.TabIndex = 13;
             btnResetForm.Text = "Reset Form";
             btnResetForm.UseVisualStyleBackColor = true;
+            btnResetForm.Click += BtnResetFormClickEH;
             // 
             // btnCreatePizza
             // 
@@ -455,6 +460,7 @@
             Margin = new Padding(4);
             Name = "FrmPizzaMaker";
             Text = "Reset Form";
+            Load += FrmPizzaMaker_Load;
             grpIngredients.ResumeLayout(false);
             grpIngredients.PerformLayout();
             grpCrust.ResumeLayout(false);

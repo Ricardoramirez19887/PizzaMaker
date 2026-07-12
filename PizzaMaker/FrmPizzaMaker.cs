@@ -1,7 +1,17 @@
-using PizzaMaker.Models;
+/*
+ * Ricardo Ramirez
+ * CST- 250
+ * 7/7/26
+ * PIzza Maker
+ * Activity 4
+ */
+
 using System.Drawing.Text;
 using System.Text;
+using PizzaMakerClassLibrary.Models;
+
 namespace PizzaMaker
+
 {
     public partial class FrmPizzaMaker : Form
     {
@@ -39,7 +49,6 @@ namespace PizzaMaker
             btnCreatePizza.Enabled = false;
             btnResetForm.Enabled = false;
 
-            UpdatePrice();
         }
 
         private void ChbIngredientCheckChangedEH(object sender, EventArgs e)
@@ -97,7 +106,8 @@ namespace PizzaMaker
 
         private void HsbExtraGoodiesValueChangedEH(object sender, EventArgs e)
         {
-
+            pizzaModel.SauceQuantity = hsbSauce.Value;
+            pizzaModel.CheeseQuantity = hsbCheese.Value;
         }
 
         private void DtpDeliveryTimeValueChangeEH(object sender, EventArgs e)
@@ -115,6 +125,83 @@ namespace PizzaMaker
                 pizzaModel.PizzaBoxColor = colorDialog.Color;
 
             }
+        }
+
+        private void FrmPizzaMaker_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnResetFormClickEH(object sender, EventArgs e)
+        {
+            ResetForm();
+        }
+
+        private void ResetControls(Control parent)
+        {
+            foreach (Control control in parent.Controls)
+            {
+                if (control is TextBox)
+                    ((TextBox)control).Clear();
+
+                if (control is CheckBox)
+                    ((CheckBox)control).Checked = false;
+
+                if (control is RadioButton)
+                    ((RadioButton)control).Checked = false;
+
+                if (control is ListBox)
+                    ((ListBox)control).ClearSelected();
+
+                if (control is HScrollBar)
+                    ((HScrollBar)control).Value = 0;
+
+                if (control is DateTimePicker)
+                    ((DateTimePicker)control).Value = DateTime.Now;
+
+                if (control is PictureBox)
+                    ((PictureBox)control).BackColor = Color.White;
+
+                if (control.HasChildren)
+                    ResetControls(control);
+            }
+
+
+            lblSauce.Text = "00";
+            lblCheese.Text = "00";
+
+            btnCreatePizza.Enabled = false;
+            btnResetForm.Enabled = false;
+        }
+
+
+
+        private void ResetForm()
+        {
+            pizzaModel = new PizzaModel();
+
+            ResetControls(this);
+            UpdatePrice();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void grpExtraGoodies_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void grpCrust_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }
