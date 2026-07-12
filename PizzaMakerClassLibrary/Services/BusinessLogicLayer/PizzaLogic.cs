@@ -28,6 +28,11 @@ namespace PizzaMakerClassLibrary.Services.BusinessLogicLayer
 
             return (true, pizzaCount);
         }
+
+        public List<PizzaModel> GetPizzaOrder()
+        {
+            return PizzaDAO.GetPizzaOrder();
+        }
     }
 }
 

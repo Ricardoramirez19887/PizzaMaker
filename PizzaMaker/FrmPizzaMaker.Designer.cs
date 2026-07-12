@@ -442,7 +442,7 @@
             // 
             btnSeeFullOrder.Location = new Point(696, 484);
             btnSeeFullOrder.Name = "btnSeeFullOrder";
-            btnSeeFullOrder.Size = new Size(94, 29);
+            btnSeeFullOrder.Size = new Size(183, 29);
             btnSeeFullOrder.TabIndex = 15;
             btnSeeFullOrder.Text = "See Full Order";
             btnSeeFullOrder.UseVisualStyleBackColor = true;

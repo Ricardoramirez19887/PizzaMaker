@@ -17,9 +17,20 @@ namespace PizzaMaker
     {
         private List<PizzaModel> _pizzaOrders;
         private PizzaLogic _pizzaLogic;
-        public FrmOrderDetails()
+        public FrmOrderDetails(List<PizzaModel> pizzaOrders, PizzaLogic pizzaLogic)
         {
             InitializeComponent();
+
+            _pizzaOrders = pizzaOrders;
+            _pizzaLogic = pizzaLogic;
+
+            DisplayPizzas();
+        }
+
+        private void DisplayPizzas()
+        {
+            dgvPizzaOrder.DataSource = null;
+            dgvPizzaOrder.DataSource = _pizzaOrders;
         }
 
         private void FrmOrderDetails_Load(object sender, EventArgs e)

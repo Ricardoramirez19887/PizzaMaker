@@ -15,20 +15,30 @@ namespace PizzaMakerClassLibrary.Services.DataAccesLayer
     /// </summary>   
     
     }
-    public class PizzaDAO
+public class PizzaDAO
+{
+    private List<PizzaModel> _pizzaOrder;
+
+    public PizzaDAO()
     {
-        private List<PizzaModel> _pizzaOrder;
-
-        public PizzaDAO()
-        {
-            _pizzaOrder = new List<PizzaModel>();
-        }
-
-        public int AddPizzaToOrder(PizzaModel newPizza)
-        {
-            _pizzaOrder.Add(newPizza);
-
-            return _pizzaOrder.Count;
-        }
+        _pizzaOrder = new List<PizzaModel>();
     }
+
+    public int AddPizzaToOrder(PizzaModel newPizza)
+    {
+        _pizzaOrder.Add(newPizza);
+
+        return _pizzaOrder.Count;
+    }
+
+    public List<PizzaModel> GetPizzaOrder()
+    {
+        return _pizzaOrder;
+    }
+}
+
+       
+         
+    
+
 

@@ -224,9 +224,12 @@ namespace PizzaMaker
             }
         }
 
-        private void btnSeeFullOrder_Click(object sender, EventArgs e)
+        private void btnSeeFullOrder_ClickEH(object sender, EventArgs e)
         {
+            FrmOrderDetails frmOrderDetails =
+                new FrmOrderDetails(pizzaLogic.GetPizzaOrder(), pizzaLogic);
 
+            frmOrderDetails.ShowDialog();
         }
     }
 }
